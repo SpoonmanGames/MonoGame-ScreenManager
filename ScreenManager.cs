@@ -1,20 +1,18 @@
-﻿#region using System
-using System.Diagnostics;
-using System.Collections.Generic;
-#endregion
-#region using Xna.Framework
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
-#endregion
+using ScreenManager.StateControl;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace ScreenManager
 {
     /// <summary>
-    /// ScreenManager es un componente que maneja uno o más instancias de GameScreen.
+    /// ScreenManager es un componente que maneja una o más instancias de GameScreen.
     /// Las mantiene en una cola y realiza Update y Draw én el orden en que están guardadas.
-    /// Mantiene también el input en la pantalla correcta.
+    /// Mantiene también el input en la pantalla correcta y en standby las pantallas que no están
+    /// activas en un momento dado.
     /// </summary>
     public class ScreenManager : DrawableGameComponent
     {

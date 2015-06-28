@@ -1,9 +1,7 @@
-﻿#region using Xna.Framework
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-#endregion
 
-namespace ScreenManager
+namespace ScreenManager.StateControl
 {
     /// <summary>
     /// Lee el input del teclado y del Gamepad manteniendo un estado

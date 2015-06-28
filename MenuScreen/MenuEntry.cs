@@ -1,10 +1,6 @@
-﻿#region using System
-using System;
-#endregion
-#region using Xna.Framework
+﻿using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-#endregion
 
 namespace ScreenManager.MenuScren
 {

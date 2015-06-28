@@ -46,9 +46,9 @@
     <Compile Include="PantallasBases\PauseMenuScreen.cs" />
     <Compile Include="PantallasBases\PopupScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScreenManager\GameScreen.cs" />
-    <Compile Include="ScreenManager\InputState.cs" />
-    <Compile Include="ScreenManager\ScreenManager.cs" />
+    <Compile Include="StateControl\GameScreen.cs" />
+    <Compile Include="StateControl\InputState.cs" />
+    <Compile Include="ScreenManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

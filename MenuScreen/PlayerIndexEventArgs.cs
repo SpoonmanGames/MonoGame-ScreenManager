@@ -1,9 +1,5 @@
-﻿#region using System
-using System;
-#endregion
-#region Xna.Framework
+﻿using System;
 using Microsoft.Xna.Framework;
-#endregion
 
 namespace ScreenManager.MenuScren
 {

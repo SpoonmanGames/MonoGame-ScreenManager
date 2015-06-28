@@ -1,11 +1,7 @@
-﻿#region using System
+﻿using Microsoft.Xna.Framework;
 using System;
-#endregion
-#region using Xna.Framework
-using Microsoft.Xna.Framework;
-#endregion
 
-namespace ScreenManager
+namespace ScreenManager.StateControl
 {
     /// <summary>
     /// Enum para saber el estado de transición del Screen
