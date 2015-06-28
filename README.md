@@ -10,7 +10,7 @@ Dentro de las opciones posibles a realizar con el ScreenManager tenemos:
 * Crear menú de opciones configurables.
 * Paso de Menú a escenarios y viceversa.
 * Traspaso entre escenarios.
-* Pantalla y ación de Pause.
+* Pantalla y acción de Pause.
 * Pantalla de "Cargando..."
 * Popups.
 
@@ -30,18 +30,18 @@ Actualmente compatible con las siguientes versiones:
 
 # Como contribuir al proyecto
 
-¿Tienes alguna idea o has arreglado algún bug? Sientete libre de hacer un [Fork]() del proyecto y luego hacer un pull request ;)
+¿Tienes alguna idea o has arreglado algún bug? Siéntete libre de hacer un [Fork]() del proyecto y luego hacer un pull request ;)
 Los requisitos para que tu pull request sea aceptado son los siguientes:
 
-* Nuevos metodos publicos comentado con las [directivas de C#](https://msdn.microsoft.com/en-us/library/2d6dt3kf.aspx).
-* Sigue los estandares de C#, en particular estas tres páginas:
+* Nuevos métodos públicos comentado con las [directivas de C#](https://msdn.microsoft.com/en-us/library/2d6dt3kf.aspx).
+* Sigue los estándares de C#, en particular estas tres páginas:
 	* [dofactory](http://www.dofactory.com/reference/csharp-coding-standards): reglas generales.
-	* [Lance Hunt Coding Standars](http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf): Naming Conventions (Pág 3 y Capítulo 2).
+	* [Lance Hunt Coding Standars](http://se.inf.ethz.ch/old/teaching/ss2007/251-0290-00/project/CSharpCodingStandards.pdf): Naming Conventions (Pág. 3 y Capítulo 2).
 	* [Microsoft Coding Conventions](https://msdn.microsoft.com/en-us/library/ff926074.aspx): Para operadores, strings, arrays y LINQ.
 * No se ha cambiado el nombre del autor en las clases ya creadas.
-* Los archivo README.mdt LICENCE no tiene modificaciones.
+* Los archivos README.md y LICENCE no tiene modificaciones.
 
-# Detras de las escenas
+# Detrás de las escenas
 
 El proyecto de ScreenManager corresponde a un DrawableGameComponent de Monogame, lo que le permite ser actualizado y dibujado de forma automática, es por ello
 que este proyecto debe declararse a un nivel mayor en el vídeo juego, de tal forma que maneje todos sus aspectos internos.
