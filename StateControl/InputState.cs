@@ -7,6 +7,7 @@ namespace ScreenManager.StateControl
     /// Lee el input del teclado y del Gamepad manteniendo un estado
     /// actual del controller y el estado previo. También controla las acciones
     /// generales como por ejemplo "PAUSE" o moverse por el menú
+    /// <remarks>Esta clase permite manejar Inputs ya sea por teclado o por GamePad.</remarks>
     /// </summary>
     public class InputState
     {
@@ -192,7 +193,7 @@ namespace ScreenManager.StateControl
         public bool IsMenuSelect(PlayerIndex? controllingPlayer,
                                  out PlayerIndex playerIndex)
         {
-            //Acepta la Key.Space, Key.Enter
+            //Acepta la Key.Space o Key.Enter
             return IsNewKeyPress(Keys.Space, controllingPlayer, out playerIndex) ||
                    IsNewKeyPress(Keys.Enter, controllingPlayer, out playerIndex);
         }
@@ -265,37 +266,6 @@ namespace ScreenManager.StateControl
 
             //Acepta Keys.Down
             return IsNewKeyPress(Keys.Down, controllingPlayer, out playerIndex);
-        }
-
-        /// <summary>
-        /// Revisa si se ha realizado una acción de "Ready Game".
-        /// Acepta Keys.Escape
-        /// </summary>
-        /// <param name="controllingPlayer">Especifica que player realizará la selección, si es NULL
-        /// aceptará input de cualquier jugador</param>
-        /// <returns>Bool de que la tecla está siendo presionada</returns>
-        public bool IsCancel(PlayerIndex? controllingPlayer)
-        {
-            PlayerIndex playerIndex;
-
-            //Acepta Key.Escape
-            return IsNewKeyPress(Keys.Escape, controllingPlayer, out playerIndex);
-        }
-
-        public bool IsG(PlayerIndex? controllingPlayer)
-        {
-            PlayerIndex playerIndex;
-
-            //Acepta Key.G
-            return IsNewKeyPress(Keys.G , controllingPlayer, out playerIndex);
-        }
-        
-        public bool IsH(PlayerIndex? controllingPlayer)
-        {
-            PlayerIndex playerIndex;
-
-            //Acepta Key.Escape
-            return IsNewKeyPress(Keys.H, controllingPlayer, out playerIndex);
         }
 
         #endregion

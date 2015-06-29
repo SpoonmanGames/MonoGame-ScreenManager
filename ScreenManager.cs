@@ -13,6 +13,8 @@ namespace ScreenManager
     /// Las mantiene en una cola y realiza Update y Draw én el orden en que están guardadas.
     /// Mantiene también el input en la pantalla correcta y en standby las pantallas que no están
     /// activas en un momento dado.
+    /// <remarks>Esta es la clase principal del proyecto, se extiende de DrawableGameComponent por
+    /// lo que debe ser implementada al cmienzo de un proyecto Monogame.</remarks>
     /// </summary>
     public class ScreenManager : DrawableGameComponent
     {
@@ -171,10 +173,6 @@ namespace ScreenManager
                         coveredByOtherScreen = true;
                 }
             }
-
-            //Debug - Imprime la traza
-            if (TraceEnabled)
-                TraceScreens();
         }
 
 
@@ -269,23 +267,6 @@ namespace ScreenManager
             SpriteBatch.End();
         }
 
-
-        #endregion
-
-        #region Debug
-
-        /// <summary>
-        /// Imprime por consola una lista completa de las Screens Contenidas
-        /// </summary>
-        void TraceScreens()
-        {
-            List<string> screenNames = new List<string>();
-
-            foreach (GameScreen screen in screens)
-                screenNames.Add(screen.GetType().Name);
-
-            Debug.WriteLine(string.Join(", ", screenNames.ToArray()));
-        }
 
         #endregion
     }

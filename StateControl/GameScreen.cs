@@ -5,6 +5,20 @@ namespace ScreenManager.StateControl
 {
     /// <summary>
     /// Enum para saber el estado de transición del Screen
+    /// <list type="bullet">
+    /// <item> 
+    /// <description>TransitionOn: Cuando la Screen está comenzando a verse.</description> 
+    /// </item> 
+    /// <item> 
+    /// <description>Active: Cuando la Screen está activa.</description> 
+    /// </item>
+    /// <item> 
+    /// <description>TransitionOff: Cuando la Screen comienza a irse.</description> 
+    /// </item>
+    /// <item> 
+    /// <description>Hidde: Cuando la pantalla se ha ido pero sigue cargada para volver a aparecer.</description> 
+    /// </item>
+    /// </list>
     /// </summary>
     public enum ScreenState
     {
