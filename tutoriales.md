@@ -29,7 +29,7 @@ permalink: /tutoriales/
         {% endif %}
       </div>
       <br/>
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Leer más ...</a>
     </article>
   {% endfor %}
 </div>

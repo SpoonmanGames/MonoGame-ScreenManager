@@ -2,7 +2,7 @@
 layout: default
 ---
 
-# ScreenManager v1.0
+# ScreenManager v1.0.1
 
 <p align="justify">
 Este proyecto ha sido desarrollado por <a href="http://www.spoonmangames.cl"><strong>Spoonman Games</strong></a> y es
@@ -23,7 +23,7 @@ Con <strong>ScreenManager</strong> se puede:
 
 # Descargar ScreenManager
 
-* [ScreenManager para Monogame 3.4](https://github.com/SpoonmanGames/MonoGame-ScreenManager/releases/tag/v1.0)
+* [ScreenManager para Monogame 3.4](https://github.com/SpoonmanGames/MonoGame-ScreenManager/releases/tag/v1.0.1)
 
 # ¿Cómo lo uso?
 

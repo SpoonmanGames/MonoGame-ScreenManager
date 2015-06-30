@@ -44,6 +44,8 @@ Esto provocara que en la lista de referencias esté listado **ScreenManager** co
 
 <p align="center"><img src="{{ site.baseurl }}/images/07-implementacion.png" /></p>
 
+# 2.- Agregar código fuente
+
 Lo siguiente es abrir el archivo inicial del proyecto (usualmente llamado Game1.cs en el proyecto Shared) y agregar el siguiente atributo a la clase.
 
 <pre class="prettyprint">
@@ -70,4 +72,31 @@ El constructor de Game1 debe tener al menos los siguientes elementos.
     </code>
 </pre>
 
-Esto provocará que en cada frame del video juego, los metodos Update y Draw de **ScreenManager** serán llamados.
+Esto provocará que en cada frame del video juego los metodos Update() y Draw() de **ScreenManager** serán llamados.
+
+# 3.- Agregar Assets necesarios
+
+**ScreenManager** usa unas fuentes llamadas GameFontm una textura llamada blank y una gradiente llamada PopupGradient, ambas están adjuntas en la descarga del proyecto y deben agregarse al vídeo juego mediante el Content Manger de Monogame.
+
+Para este caso basta hacerlo una sola vez, ya sea en Windows 8.1 o en Windows Phone para que el contenido se agregué a ambos. Abra el Content Manager de Windows 8.1 con doble click donde muestra la imagen.
+
+<p align="center"><img src="{{ site.baseurl }}/images/08-implementacion.png" /></p>
+
+Luego agregue tres carpetas llamadas Font, Gradientes y Texturas.
+
+<p align="center"><img src="{{ site.baseurl }}/images/09-implementacion.gif" /></p>
+
+Finalmente a cada carpeta agregue los assets correspondientes de tal forma que se vea como la siguiente imagen (debe seleccionar agregar item existente), para luego hacer un build de los assets.
+
+<p align="center"><img src="{{ site.baseurl }}/images/10-implementacion.gif" /></p>
+
+Si al momento de agregar los assets le pregunta si desea copiar los archivos o hacer un link a ellos, puede elegir la que más le acomode, aunque recomendamos copiar los archivos para tener todos sus assets en un lugar centralizado.
+
+# 4.- Listo!
+
+Ya puedes compilar e iniciar el juego sin ningún problema, al hacerlo notaras que no hay ningún cambio sustancial en tú vídeo juego, esto es debido a que aunque **ScreenManager** esta apropiadamente configurado e implementado aún no hacemos uso de sus funcionalidades.
+
+# 5.- ¿Dónde continuar?
+
+Desde aquí puedes implementar de muchas maneras diferentes a **ScreenManager** te invitamos a revisar [nuestros tutoriales]({{ site.baseurl }}/tutoriales/) para darte una idea de donde empezar y como usar esta herramienta.
+

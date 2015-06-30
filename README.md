@@ -17,7 +17,7 @@ Con **ScreenManager** se puede:
 
 # Descargar ScreenManager
 
-* [ScreenManager para Monogame 3.4](https://github.com/SpoonmanGames/MonoGame-ScreenManager/releases/tag/v1.0)
+* [ScreenManager para Monogame 3.4](https://github.com/SpoonmanGames/MonoGame-ScreenManager/releases/tag/v1.0.1)
 
 # ¿Cómo lo uso?
 
