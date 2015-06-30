@@ -1,0 +1,35 @@
+---
+layout: default
+title: Tutoriales
+permalink: /tutoriales/
+---
+
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
+
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <small>
+        {% if site.disqus %}
+            <a href="{{ post.url }}#disqus_thread"></a>
+        {% endif %}
+        {% if post.tags.size > 0 %}
+            Tags: 
+          {% for tag in post.tags %}
+            <a href="/tag/{{ tag }}">{{ tag }} </a>
+          {% endfor %}
+        {% endif %}
+       </small>
+
+      <div class="entry">
+        {% if post.summary %}
+            {{ post.summary }}
+        {% else %}
+            {{ post.excerpt}}
+        {% endif %}
+      </div>
+      <br/>
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>

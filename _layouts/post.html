@@ -22,7 +22,7 @@ layout: default
   </div>
 
   <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
+    {% include page-date.html %}
   </div>
 
   {% include disqus.html %}
