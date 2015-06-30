@@ -23,6 +23,10 @@ footer-links:
   dribbble:
   email: spoonman.desarrollo@gmail.com
   facebook: spoonman.games
+  facebook-sdk:
+    active: true
+    appId: 108482629489132
+    version: v2.3
   flickr:
   github: SpoonmanGames/MonoGame-ScreenManager/tree/master
   instagram:
