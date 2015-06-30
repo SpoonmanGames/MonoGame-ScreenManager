@@ -23,13 +23,13 @@ Con <strong>ScreenManager</strong> se puede:
 
 # Descargar ScreenManager
 
-//TODO
+* [ScreenManager para Monogame 3.4](https://github.com/SpoonmanGames/MonoGame-ScreenManager/releases/tag/v1.0)
 
 # ¿Cómo lo uso?
 
 Para configurar e incluir este proyecto en tu vídeo juego te recomendamos partir por esta guía:
 
-* [Como incluir ScreenManager en tu vídeo juego]({{ site.baseurl }}/tutoriales/#). //TODO: link
+* [Como incluir ScreenManager en tu Vídeo Juego]({{ site.baseurl }}/tutoriales/implementacion/).
 
 Luego te recomendamos ver nuestra [lista de tutoriales]({{ site.baseurl }}/tutoriales/).
 
