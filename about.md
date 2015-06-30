@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About
+title: Acerca De
 permalink: /about/
 ---
 
@@ -15,13 +15,13 @@ También te invitamos seguirnos en nuestras redes sociales:
 * [Facebook](https://www.facebook.com/spoonman.games)
 * [Twitter](https://twitter.com/spoonmangames)
 
-### Contáctanos
+## Contáctanos
 
 Puedes contactarnos directamente a través de nuestra página oficial usando el siguiente [link](http://www.spoonmangames.cl/contact/).
 
 Tomamos muy en consideración todo el tipo de feedback que puedas darnos, por muy mínimo que sea.
 
-### Copyrights
+## Copyrights
 
 <p align="justify">Este proyecto está ofrecido bajo la licencia MIT y ha sido desarrollado por Spoonman Games para usarse principalmente en proyectos MonoGames 2D. Naturalmente se seguirá dando soporte a este repositorio siempre y cuándo SG lo siga usando.
 <br><br>

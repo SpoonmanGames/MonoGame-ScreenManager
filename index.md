@@ -21,11 +21,11 @@ Con <strong>ScreenManager</strong> se puede:
 * Pantalla de "Cargando..."
 * Popups.
 
-# Descargar ScreenManager
+## Descargar ScreenManager
 
 * [ScreenManager para Monogame 3.4](https://github.com/SpoonmanGames/MonoGame-ScreenManager/releases/tag/v1.0.1)
 
-# ¿Cómo lo uso?
+## ¿Cómo lo uso?
 
 Para configurar e incluir este proyecto en tu vídeo juego te recomendamos partir por esta guía:
 
@@ -33,13 +33,13 @@ Para configurar e incluir este proyecto en tu vídeo juego te recomendamos parti
 
 Luego te recomendamos ver nuestra [lista de tutoriales]({{ site.baseurl }}/tutoriales/).
 
-# Compatibilidades
+## Compatibilidades
 
 Actualmente compatible con las siguientes versiones:
 
  * MonoGame 3.4
 
-# Como contribuir al proyecto
+## Como contribuir al proyecto
 
 <p align="justify">Este proyecto es código libre, puede acceder al él presionando en el mensaje que sale en la esquina superior derecha de esta página o <a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/tree/master">desde este link</a>, desde allí puedes hacer Fork del proyecto y si tienes alguna idea nueva o has arreglado algún bug, siéntete libre de un pull request con tus cambios.
 <br><br>
@@ -55,7 +55,7 @@ Los requisitos para que tu pull request sea aceptado son los siguientes:
 * No se ha cambiado el nombre del autor en las clases ya creadas.
 * Los archivos README.md y LICENCE no tiene modificaciones.
 
-# Detrás de las escenas
+## Detrás de las escenas
 
 <p align="justify">El proyecto de ScreenManager corresponde a un DrawableGameComponent de Monogame, lo que le permite ser actualizado y dibujado de forma automática, es por ello que este proyecto debe declararse a un nivel mayor en el vídeo juego, de tal forma que maneje todos sus aspectos internos.
 <br><br>

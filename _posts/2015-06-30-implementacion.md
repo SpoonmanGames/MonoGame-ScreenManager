@@ -6,15 +6,15 @@ category:
 summary: Acá podrás entender como implementar este proyecto dentro de tu juego sin romper nada. ¡Si algo se rompe fueron los duendes!
 ---
 
-Esta guía está basada en la última versión liberada de ScreenManager, la cuaĺ puedes descargar desde el [repositorio oficial](https://github.com/SpoonmanGames/MonoGame-ScreenManager/releases), por favor revisar bien en que IDE se encuentra ese release ya que esta guía estará hecha para funcionar en dicha plataforma.
+<p class="ribbon-alert b-red" align="justify"><strong>Alerta:</strong> Esta guía está basada en la última versión liberada de ScreenManager, la cual puedes descargar desde el <a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/releases">repositorio oficial</a>, por favor revisar bien en que IDE se encuentra ese release ya que esta guía estará hecha para funcionar en dicha plataforma.</p>
 
-En esta guía se asumen que deseas incluir este proyecto en la misma carpeta que la de tu vídeo juego, en caso de no ser así te recomiendo tener especial cuidado al incluirlo en tu solución y al agregar las referencias.
+<p class="ribbon-alert b-blue" align="justify"><strong>Antes de empezar:</strong> En esta guía se asumen que deseas incluir este proyecto en la misma carpeta que la de tu vídeo juego, en caso de no ser así te recomiendo tener especial cuidado al incluirlo en tu solución y al agregar las referencias.</p>
 
-Se usará como proyecto de referencia a "Proyecto Tutorial", el cual representará durante esta guía tu vídeo juego o proyecto Monogame previamente creado.
+<p class="ribbon-alert b-blue" align="justify"><strong>Antes de empezar:</strong> Se usará como proyecto de referencia a "Proyecto Tutorial", el cual representará durante esta guía tu vídeo juego o proyecto Monogame previamente creado.</p>
 
-Pro Tip: Si quieres mantener este proyecto actualizado con la última versión te recomendamos usar [Git](https://git-scm.com/) con [Git Clone](http://git-scm.com/docs/git-clone) o bien con [Git Submodules](https://git-scm.com/book/es/v2/Git-Tools-Submodules) si tu proyecto ya está en un repositorio.
+<p class="ribbon-alert b-green" align="justify"><strong>Pro Tip:</strong> Si quieres mantener este proyecto actualizado con la última versión te recomendamos usar <a href="https://git-scm.com/">Git</a> con <a href="http://git-scm.com/docs/git-clone">Git Clone</a> o bien con <a href="https://git-scm.com/book/es/v2/Git-Tools-Submodules">Git Submodules</a> si tu proyecto ya está en un repositorio.</p>
 
-# 1.- Agregar proyecto a la solución de Visual Studio
+## 1.- Agregar proyecto a la solución de Visual Studio
 
 Es importante que **ScreenManager** esté en la carpeta del proyecto de tu vídeo juego.
 
@@ -44,7 +44,7 @@ Esto provocara que en la lista de referencias esté listado **ScreenManager** co
 
 <p align="center"><img src="{{ site.baseurl }}/images/07-implementacion.png" /></p>
 
-# 2.- Agregar código fuente
+## 2.- Agregar código fuente
 
 Lo siguiente es abrir el archivo inicial del proyecto (usualmente llamado Game1.cs en el proyecto Shared) y agregar el siguiente atributo a la clase.
 
@@ -74,7 +74,7 @@ El constructor de Game1 debe tener al menos los siguientes elementos.
 
 Esto provocará que en cada frame del video juego los metodos Update() y Draw() de **ScreenManager** serán llamados.
 
-# 3.- Agregar Assets necesarios
+## 3.- Agregar Assets necesarios
 
 **ScreenManager** usa unas fuentes llamadas GameFontm una textura llamada blank y una gradiente llamada PopupGradient, ambas están adjuntas en la descarga del proyecto y deben agregarse al vídeo juego mediante el Content Manger de Monogame.
 
@@ -92,11 +92,11 @@ Finalmente a cada carpeta agregue los assets correspondientes de tal forma que s
 
 Si al momento de agregar los assets le pregunta si desea copiar los archivos o hacer un link a ellos, puede elegir la que más le acomode, aunque recomendamos copiar los archivos para tener todos sus assets en un lugar centralizado.
 
-# 4.- Listo!
+## 4.- Listo!
 
 Ya puedes compilar e iniciar el juego sin ningún problema, al hacerlo notaras que no hay ningún cambio sustancial en tú vídeo juego, esto es debido a que aunque **ScreenManager** esta apropiadamente configurado e implementado aún no hacemos uso de sus funcionalidades.
 
-# 5.- ¿Dónde continuar?
+## 5.- ¿Dónde continuar?
 
 Desde aquí puedes implementar de muchas maneras diferentes a **ScreenManager** te invitamos a revisar [nuestros tutoriales]({{ site.baseurl }}/tutoriales/) para darte una idea de donde empezar y como usar esta herramienta.
 
