@@ -2,7 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-namespace ScreenManager.MenuScren
+namespace ScreenManager.MenuScreen
 {
     /// <summary>
     /// Clase que representa un único entry en una pantalla de menu. Por defecto

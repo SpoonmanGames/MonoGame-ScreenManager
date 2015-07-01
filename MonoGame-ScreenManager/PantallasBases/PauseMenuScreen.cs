@@ -1,4 +1,4 @@
-﻿using ScreenManager.MenuScren;
+﻿using ScreenManager.MenuScreen;
 
 namespace ScreenManager.PantallasBases
 {

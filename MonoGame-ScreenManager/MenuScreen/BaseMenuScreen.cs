@@ -4,7 +4,7 @@ using ScreenManager.StateControl;
 using System;
 using System.Collections.Generic;
 
-namespace ScreenManager.MenuScren
+namespace ScreenManager.MenuScreen
 {
     /// <summary>
     /// Clase base para las Screen que tendrán menus de diferentes tipos.

@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
 
-namespace ScreenManager.MenuScren
+namespace ScreenManager.MenuScreen
 {
     /// <summary>
     /// EventArgs que incluye el Index del player que ha lanzado este evento.
