@@ -288,7 +288,9 @@ footer {
 @import "highlights";
 @import "svg-icons";
 
-// Ribbons
+/* Ribbons
+ * =======================================================================
+ */
 
 #main h1
 {
@@ -421,3 +423,29 @@ footer {
 .b-red a, .b-green a, .b-blue a{
   color: #000;
 }
+
+
+
+
+/* Back To Top
+ * =======================================================================
+ */
+
+ .back-to-top {
+   background: none;
+   margin: 0;
+   position: fixed;
+   bottom: 0;
+   right: 0;
+   width: 70px;
+   height: 70px;
+   z-index: 100;
+   display: none;
+   text-decoration: none;
+   color: #ff9000;
+   background-color: #transparent;
+ }
+
+ .back-to-top i {
+   font-size: 60px;
+ }

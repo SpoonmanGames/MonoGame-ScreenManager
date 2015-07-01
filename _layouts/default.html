@@ -25,13 +25,14 @@
 
     {% include googleplus-sdk.html %}
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+    <link rel="stylesheet" id="font-awesome-css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" type="text/css" media="screen">
   </head>
 
   <body>
     {% include twitter-sdk.html %}
     {% include facebook-sdk.html %}
 
-    <a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/tree/master"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
+    <a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/tree/master"><img style="position: fixed; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png"></a>
   
     <div class="wrapper-masthead">
       <div class="container">
@@ -63,8 +64,31 @@
       </div>
     </div>
 
-    {% include analytics.html %}
+    <a href="#" class="back-to-top">
+      <i class="fa fa-arrow-circle-up"></i>
+    </a>
 
+    {% include analytics.html %}
     {% include disqus_counter.html %}
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+    jQuery(document).ready(function() {
+        var offset = 250;
+        var duration = 300;
+        jQuery(window).scroll(function() {
+            if (jQuery(this).scrollTop() > offset) {
+                jQuery('.back-to-top').fadeIn(duration);
+            } else {
+                jQuery('.back-to-top').fadeOut(duration);
+            }
+        });
+
+        jQuery('.back-to-top').click(function(event) {
+            event.preventDefault();
+            jQuery('html, body').animate({scrollTop: 0}, duration);
+            return false;
+        })
+    });
+    </script>
   </body>
 </html>
