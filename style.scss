@@ -298,7 +298,7 @@ footer {
   width: 120%;
   font-size: 1.5em;
   font-weight: bold;
-  padding: 6px 20px 6px 70px;
+  padding: 14.1px 20px 14.1px 70px;
   margin: 30px 10px 10px -70px;
   color: #fff;
   background-color: #007200;
@@ -337,7 +337,7 @@ footer {
   width: 120%;
   font-size: 1.5em;
   font-weight: bold;
-  padding: 6px 20px 6px 70px;
+  padding: 14.1px 20px 14.1px 70px;
   margin: 30px 10px 10px -70px;
   color: #fff;
   background-color: #A00;
@@ -449,3 +449,6 @@ footer {
  .back-to-top i {
    font-size: 60px;
  }
+
+  @import "vendor/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "vendor/bootstrap-sass/assets/stylesheets/bootstrap";
