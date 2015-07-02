@@ -19,6 +19,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)GamePage.xaml.cs">
       <DependentUpon>GamePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)MenuEscenario.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MenuOpciones.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MenuPrincipal.cs" />
   </ItemGroup>
   <ItemGroup>
