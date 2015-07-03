@@ -3,8 +3,24 @@
 // VARIABLES
 //
 
-// Colors
+// General Colors
 $blue: #4183C4;
+
+// Title Ribbon Colors
+$greenBackground: #007200;
+$greenTextShadow: #005F00;
+$greenBoxShadow: #318831;
+$redBackground: #AA0000;
+$redTextShadow: #890000;
+$redBoxShadow: #C95D5D;
+$blueBackground: #000068;
+$blueTextShadow: #000089;
+$blueBoxShadow: #2C5BAE;
+
+// Alert Ribbon Colors
+$redAlertBackground: #E74C3C;
+$greenAlertBackground: #2ECC71;
+$blueAlertBackground: #3498DB;
 
 // Grays
 $black: #000;
@@ -24,4 +40,14 @@ $georgia: Georgia, serif;
   @media screen and (max-width: 640px) {
     @content;
   }
+}
+
+// Ribbon color especifications
+@mixin ribbon-color($text-color, $backg-color, $text-shaw-color, $box-shaw-color){
+    color: $text-color;
+    background-color: $backg-color;
+    text-shadow: 0px 1px 2px $text-shaw-color;
+    -webkit-box-shadow: 0px 2px 4px #box-shaw-color;
+    -moz-box-shadow: 0px 2px 4px #box-shaw-color;
+    box-shadow: 0px 2px 4px #box-shaw-color;
 }

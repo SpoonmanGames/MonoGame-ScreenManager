@@ -144,10 +144,14 @@ Al compilar y ejecutar se debieran ver las dos opciones en el menú principal, l
 El objetivo a continuación es crear dos menús más, de forma que al presionar la opción Escenarios nos lleve a un menú de selección de escenarios y que al presionar Opciones nos lleve a un menú de opciones configurables. Para ello se necesitarán dos clases nuevas similares a la clase MenuPrincipal.
 
 <p class="ribbon-alert b-green" align="justify"><strong>Pro Tip:</strong> Te invitamos a que, con los conocimientos adquiridos hasta ahora, crees tu mismo los menú MenuEscenario.cs y MenuOpciones.cs y te saltes a la parte "4.- Unir los menús" de este tutorial.</p>
+<br>
+<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+  Mostrar solución
+</button>
+<div class="collapse" id="collapseExample">
+    <div class="well">
 
-mostrar/ocultar clases
-
-### MenuEscenario.cs
+<h3>MenuEscenario.cs</h3>
 
 <pre class="prettyprint">
     <code class="language-cs">
@@ -170,7 +174,7 @@ mostrar/ocultar clases
     </code>
 </pre>
 
-### MenuOpciones.cs
+<h3>MenuOpciones.cs</h3>
 
 <pre class="prettyprint">
     <code class="language-cs">
@@ -192,6 +196,8 @@ mostrar/ocultar clases
     }
     </code>
 </pre>
+</div>
+</div>
 
 ## 4.- Unir los Menús
 
@@ -263,6 +269,7 @@ Como ya debes estar intuyendo, para el Menú de Opciones debes hacer lo mismo, c
         // esto se activará al presionar Enter sobre la opción
         // "Escenarios"
         escenarios.Selected += MenuEscenarioSelected;
+        
         // Event Handler suscrito al evento MenuOpcionesSelected,
         // esto se activará al presionar Enter sobre la opción
         // "Opciones"

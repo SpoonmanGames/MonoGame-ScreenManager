@@ -7,6 +7,7 @@
 
 @import "reset";
 @import "variables";
+@import "ribbons";
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -283,149 +284,61 @@ footer {
   text-align: center;
 }
 
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
-@import "svg-icons";
-
 /* Ribbons
  * =======================================================================
  */
 
-#main h1
-{
-  position: relative;
-  width: 120%;
+#main h1{
+  @extend %ribbon;
   font-size: 1.5em;
   font-weight: bold;
-  padding: 14.1px 20px 14.1px 70px;
-  margin: 30px 10px 10px -70px;
-  color: #fff;
-  background-color: #007200;
-  text-shadow: 0px 1px 2px #005F00;
-  -webkit-box-shadow: 0px 2px 4px #318831;
-  -moz-box-shadow: 0px 2px 4px #318831;
-  box-shadow: 0px 2px 4px #318831;
+  @include ribbon-color($white, $greenBackground, $greenTextShadow, $greenBoxShadow);
 }
-#main h1:before
-{
-  content: ' ';
-  position: absolute;
-  width: 50px;
-  height: 0;
-  left: -30px;
-  top: 49%;
-  border-width: 20px 10px;
-  border-style: solid;
-  border-color: #007200 #007200 #007200 transparent;
+#main h1:before{
+  @extend %ribbon-before;
+  border-color: $greenBackground $greenBackground $greenBackground transparent;
 }
-#main h1:after
-{
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0px;
-  top: 100%;
-  border-width: 5px 10px;
-  border-style: solid;
-  border-color: #666 #666 transparent transparent;
+#main h1:after{
+  @extend %ribbon-after;
 }
-#main h2
-{
-  position: relative;
-  width: 120%;
+
+#main h2{
+  @extend %ribbon;
   font-size: 1.5em;
   font-weight: bold;
-  padding: 14.1px 20px 14.1px 70px;
-  margin: 30px 10px 10px -70px;
-  color: #fff;
-  background-color: #A00;
-  text-shadow: 0px 1px 2px #890000;
-  -webkit-box-shadow: 0px 2px 4px #C95D5D;
-  -moz-box-shadow: 0px 2px 4px #C95D5D;
-  box-shadow: 0px 2px 4px #C95D5D;
+  @include ribbon-color($white, $redBackground, $redTextShadow, $redBoxShadow);
 }
-#main h2:before
-{
-  content: ' ';
-  position: absolute;
-  width: 50px;
-  height: 0;
-  left: -30px;
-  top: 49%;
-  border-width: 20px 10px;
-  border-style: solid;
-  border-color: #A00 #A00 #A00 transparent;
+#main h2:before{
+  @extend %ribbon-before;
+  border-color: $redBackground $redBackground $redBackground transparent;
 }
-#main h2:after
-{
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0px;
-  top: 100%;
-  border-width: 5px 10px;
-  border-style: solid;
-  border-color: #666 #666 transparent transparent;
+#main h2:after{
+  @extend %ribbon-after;
 }
 
 .ribbon-alert
 {
-  position: relative;
-  width: 120%;
+  @extend %ribbon;
   font-size: 0.9em;
-  padding: 6px 20px 6px 70px;
-  margin: 30px 10px 10px -70px;
 }
-.ribbon-alert:after
-{
-  content: ' ';
-  position: absolute;
-  width: 0;
-  height: 0;
-  left: 0px;
-  top: 100%;
-  border-width: 5px 10px;
-  border-style: solid;
-  border-color: #666 #666 transparent transparent;
+.ribbon-alert:after{
+  @extend %ribbon-after;
 }
 
-.b-red
-{
-  background-color: #e74c3c;
-  color: #fff;  
-  text-shadow: 0px 1px 2px #890000;
-  -webkit-box-shadow: 0px 2px 4px #C95D5D;
-  -moz-box-shadow: 0px 2px 4px #C95D5D;
-  box-shadow: 0px 2px 4px #C95D5D;
+.b-red{
+  @include ribbon-color($white, $redAlertBackground, $redTextShadow, $redBoxShadow);
 }
-.b-green
-{
-  background-color: #2ecc71;
-  color: #fff;  
-  text-shadow: 0px 1px 2px #008900;
-  -webkit-box-shadow: 0px 2px 4px #030;
-  -moz-box-shadow: 0px 2px 4px #030;
-  box-shadow: 0px 2px 4px #030;
+.b-green{
+  @include ribbon-color($white, $greenAlertBackground, $greenTextShadow, $greenBoxShadow);
 }
-.b-blue
-{
-  background-color: #3498db;
-  color: #fff;  
-  text-shadow: 0px 1px 2px #000089;
-  -webkit-box-shadow: 0px 2px 4px #2C5BAE;
-  -moz-box-shadow: 0px 2px 4px #2C5BAE;
-  box-shadow: 0px 2px 4px #2C5BAE;
+.b-blue{
+  @include ribbon-color($white, $blueAlertBackground, $blueTextShadow, $blueBoxShadow);
 }
 
 .b-red a, .b-green a, .b-blue a{
-  color: #000;
+  color: $black;
+  text-decoration: none !important;
 }
-
-
-
 
 /* Back To Top
  * =======================================================================
@@ -450,5 +363,22 @@ footer {
    font-size: 60px;
  }
 
-  @import "vendor/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+/* Import Bootstrap
+ * =======================================================================
+ */
+
+h1 a, h2 a, h3 a{
+  text-decoration: none !important;
+}
+
+@import "vendor/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
 @import "vendor/bootstrap-sass/assets/stylesheets/bootstrap";
+
+/* Import Highlighting
+ * =======================================================================
+ */
+
+// Settled on moving the import of syntax highlighting to the bottom of the CSS
+// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
+@import "highlights";
+@import "svg-icons";

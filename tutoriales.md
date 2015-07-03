@@ -4,11 +4,12 @@ title: Tutoriales
 permalink: /tutoriales/
 ---
 
+{% assign counter = 1 %}
 <div class="posts">
-  {% for post in site.posts %}
+  {% for post in site.posts reversed %}
     <article class="post">
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ counter }} - {{ post.title }}</a></h1>
       <small>
         {% if site.disqus %}
             <a href="{{ post.url }}#disqus_thread"></a>
@@ -31,5 +32,6 @@ permalink: /tutoriales/
       <br/>
       <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Leer más ...</a>
     </article>
+    {% assign counter=counter | plus:1 %}
   {% endfor %}
 </div>
