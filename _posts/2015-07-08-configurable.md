@@ -243,7 +243,7 @@ Al hacer build e iniciar el juego se obtendrá el siguiente resultado.
 
 Como es posible ver en la imagen, el salir y volver al menú guarda los datos elegidos ya que estos son **static**, sin embargo se pueden usar otras formas para guardar estos valores, ya sean pasandolos a un **XML** u otro tipo de archivo, modificando una **Base de Datos**, pasandolos de parametros a otra función, etc. Todo este comportamiento puede ser fácilmente alterado en cada evento de cada variable.
 
-<p class="ribbon-alert b-blue" align="justify"><strong>Descarga el Proyecto:</strong> Descarga el <strong><a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/archive/mpv1.0.zip">proyecto de Menú de Opciones Configurables</a></strong>para ver cómo todo este código es aplicado. Incluye el contenido del tutorial anterior.</p>
+<p class="ribbon-alert b-blue" align="justify"><strong>Descarga el Proyecto:</strong> Descarga el <strong><a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/archive/opc-cv1.0.zip">proyecto de Menú de Opciones Configurables</a></strong>para ver cómo todo este código es aplicado. Incluye el contenido del tutorial anterior.</p>
 
 # 6.- ¿Dónde continuar?
 
