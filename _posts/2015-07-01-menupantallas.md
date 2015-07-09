@@ -307,6 +307,8 @@ Al hacer build e iniciar el juego se obtendrá el siguiente resultado.
 
 <p class="ribbon-alert b-green" align="justify"><strong>Built-in:</strong> Al estar en cualquier menú es posible usar la tecla <kbd>ESC</kbd> para volver al menú anterior. Esta funcionalidad viene previamente implementada en <strong>ScreenManager</strong></p>
 
+<p class="ribbon-alert b-blue" align="justify"><strong>Descarga el Proyecto:</strong> Descarga el <strong><a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/archive/mpv1.0.zip">proyecto de Menu y Pantallas</a></strong>para ver cómo todo este código es aplicado.</p>
+
 # 6.- ¿Dónde continuar?
 
 Con esto ya puedes cargar diferentes escenarios desde el MenuEscenarios.cs o tener un menú de opciones configurables en MenuOpciones.cs, para saber cómo hacer esto y mucho más te invitamos a revisar nuestros [tutoriales en la página principal](http://www.spoonmangames.cl/MonoGame-ScreenManager/tutoriales/).
