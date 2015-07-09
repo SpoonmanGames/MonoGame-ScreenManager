@@ -3,14 +3,14 @@ layout: post
 title: Crear un Menú con opciones configurables
 category:
 - tutoriales
-summary: En este tutorial aprenderás a crear un menú con opciones configurables.
+summary: En este tutorial aprenderás a crear un menú con opciones variadas y valores diferentes que pueden ser configurables directamente en el menú.
 ---
 
 <p class="ribbon-alert b-blue" align="justify"><strong>Antes de empezar:</strong> Se recomienda tener configurado el proyecto según se especifica en la guía <a href="http://www.spoonmangames.cl/MonoGame-ScreenManager/tutoriales/implementacion/">Como incluir ScreenManager en tu Vídeo Juego</a>.</p>
 
 <p class="ribbon-alert b-blue" align="justify"><strong>Antes de empezar:</strong> Se recomienda haber leído o hecho el tutorial de <a href="http://www.spoonmangames.cl/MonoGame-ScreenManager/tutoriales/menupantallas/">Crear un Menú con varias pantallas</a> ya que aquí se continúara dicho tutorial.</p>
 
-En este tutorial implementaremos un menú con opciones configurables, las cuáles podrán cambiarse cómo se muestra en la siguiente imagen:
+En este tutorial implementaremos un menú con opciones configurables, las cuáles podrán cambiar cómo muestra la siguiente imagen:
 
 <p align="center"><img src="{{ site.baseurl }}/images/01-configurable.gif" /></p>
 
@@ -20,22 +20,22 @@ En el tutorial anterior creamos dos clases llamadas MenuEscenario y MenuOpciones
 
 <pre class="prettyprint">
     <code class="language-cs">
-    using ScreenManager.MenuScreen;
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+using ScreenManager.MenuScreen;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-    namespace ScreenManagerShowcase
+namespace ScreenManagerShowcase
+{
+    class MenuOpciones : BaseMenuScreen
     {
-        class MenuOpciones : BaseMenuScreen
+        public MenuOpciones(string menuTitle)
+            : base(menuTitle)
         {
-            public MenuOpciones(string menuTitle)
-                : base(menuTitle)
-            {
 
-            }
         }
     }
+}
     </code>
 </pre>
 
@@ -43,38 +43,38 @@ Para este ejemplo crearemos cuatro opciones diferentes, elegir formato, elegir l
 
 <pre class="prettyprint">
     <code class="language-cs">
-    using ScreenManager.MenuScreen;
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+using ScreenManager.MenuScreen;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
-    namespace ScreenManagerShowcase
+namespace ScreenManagerShowcase
+{
+    class MenuOpciones : BaseMenuScreen
     {
-        class MenuOpciones : BaseMenuScreen
+
+    	MenuEntry formatoMenuEntry;
+        MenuEntry lenguajeMenuEntry;
+        MenuEntry superMenuEntry;
+        MenuEntry vidasMenuEntry;
+
+        public MenuOpciones(string menuTitle)
+            : base(menuTitle)
         {
-
-        	MenuEntry formatoMenuEntry;
-	        MenuEntry lenguajeMenuEntry;
-	        MenuEntry superMenuEntry;
-	        MenuEntry vidasMenuEntry;
-
-            public MenuOpciones(string menuTitle)
-                : base(menuTitle)
-            {
-            	formatoMenuEntry = new MenuEntry(this, string.Empty);
-	            lenguajeMenuEntry = new MenuEntry(this, string.Empty);
-	            superMenuEntry = new MenuEntry(this, string.Empty);
-	            vidasMenuEntry = new MenuEntry(this, string.Empty);
+        	formatoMenuEntry = new MenuEntry(this, string.Empty);
+            lenguajeMenuEntry = new MenuEntry(this, string.Empty);
+            superMenuEntry = new MenuEntry(this, string.Empty);
+            vidasMenuEntry = new MenuEntry(this, string.Empty);
 
 
 
-	            MenuEntries.Add(formatoMenuEntry);
-	            MenuEntries.Add(lenguajeMenuEntry);
-	            MenuEntries.Add(superMenuEntry);
-	            MenuEntries.Add(vidasMenuEntry);
-            }
+            MenuEntries.Add(formatoMenuEntry);
+            MenuEntries.Add(lenguajeMenuEntry);
+            MenuEntries.Add(superMenuEntry);
+            MenuEntries.Add(vidasMenuEntry);
         }
     }
+}
     </code>
 </pre>
 
@@ -124,7 +124,7 @@ Para mostrar la información de estas variables en la pantalla crearemos un meto
 private void SetMenuEntryText()
 {
     formatoMenuEntry.Text = "Formato preferido: " + formatoActual;
-    lenguajeMenuEntry.Text = "Lenguaje: " + lenguaje[lenguajeActual];
+    lenguajeMenuEntry.Text ="Lenguaje: "+lenguaje[lenguajeActual];
     superMenuEntry.Text = "Super: " + (super ? "on" : "off");
     vidasMenuEntry.Text = "vida: " + vida;
 }
@@ -143,7 +143,8 @@ Para la opción de Formato tendremos.
 
 <pre class="prettyprint">
     <code class="language-cs">
-void FormatoMenuEntrySelected(object sender, PlayerIndexEventArgs e)
+void FormatoMenuEntrySelected(
+	object sender, PlayerIndexEventArgs e)
 {
     formatoActual++;
 
@@ -161,7 +162,8 @@ Para el lenguaje tendremos.
 
 <pre class="prettyprint">
     <code class="language-cs">
-void LenguajeMenuEntrySelected(object sender, PlayerIndexEventArgs e)
+void LenguajeMenuEntrySelected(
+	object sender, PlayerIndexEventArgs e)
 {
     lenguajeActual = (lenguajeActual + 1) % lenguaje.Length;
 
@@ -176,7 +178,8 @@ Para super tendremos.
 
 <pre class="prettyprint">
     <code class="language-cs">
-void SuperMenuEntrySelected(object sender, PlayerIndexEventArgs e)
+void SuperMenuEntrySelected(
+	object sender, PlayerIndexEventArgs e)
 {
     super = !super;
 
@@ -191,7 +194,8 @@ Para vida tendremos.
 
 <pre class="prettyprint">
     <code class="language-cs">
-void VidaMenuEntrySelected(object sender, PlayerIndexEventArgs e)
+void VidaMenuEntrySelected(
+	object sender, PlayerIndexEventArgs e)
 {
     ++vida;
 
@@ -240,3 +244,7 @@ Al hacer build e iniciar el juego se obtendrá el siguiente resultado.
 Como es posible ver en la imagen, el salir y volver al menú guarda los datos elegidos ya que estos son **static**, sin embargo se pueden usar otras formas para guardar estos valores, ya sean pasandolos a un **XML** u otro tipo de archivo, modificando una **Base de Datos**, pasandolos de parametros a otra función, etc. Todo este comportamiento puede ser fácilmente alterado en cada evento de cada variable.
 
 <p class="ribbon-alert b-blue" align="justify"><strong>Descarga el Proyecto:</strong> Descarga el <strong><a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/archive/mpv1.0.zip">proyecto de Menú de Opciones Configurables</a></strong>para ver cómo todo este código es aplicado. Incluye el contenido del tutorial anterior.</p>
+
+# 6.- ¿Dónde continuar?
+
+Con esto ya puedes tener un menú con opcinoes configurables, pero ¿cómo cargar un escenario y que además haga uso de estás variables?, para saber cómo hacer esto y mucho más te invitamos a revisar nuestros [tutoriales en la página principal](http://www.spoonmangames.cl/MonoGame-ScreenManager/tutoriales/).
