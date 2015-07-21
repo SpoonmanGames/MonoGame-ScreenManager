@@ -8,9 +8,9 @@ summary: En este tutorial aprenderás a crear un menú con opciones variadas y v
 
 <p class="ribbon-alert b-blue" align="justify"><strong>Antes de empezar:</strong> Se recomienda tener configurado el proyecto según se especifica en la guía <a href="http://www.spoonmangames.cl/MonoGame-ScreenManager/tutoriales/implementacion/">Como incluir ScreenManager en tu Vídeo Juego</a>.</p>
 
-<p class="ribbon-alert b-blue" align="justify"><strong>Antes de empezar:</strong> Se recomienda haber leído o hecho el tutorial de <a href="http://www.spoonmangames.cl/MonoGame-ScreenManager/tutoriales/menupantallas/">Crear un Menú con varias pantallas</a> ya que aquí se continúara dicho tutorial.</p>
+<p class="ribbon-alert b-blue" align="justify"><strong>Antes de empezar:</strong> Se recomienda haber leído o hecho el tutorial de <a href="http://www.spoonmangames.cl/MonoGame-ScreenManager/tutoriales/menupantallas/">Crear un Menú con varias pantallas</a> ya que aquí se continuará dicho tutorial.</p>
 
-En este tutorial implementaremos un menú con opciones configurables, las cuáles podrán cambiar cómo muestra la siguiente imagen:
+En este tutorial implementaremos un menú con opciones configurables, las cuales podrán cambiar cómo muestra la siguiente imagen:
 
 <p align="center"><img src="{{ site.baseurl }}/images/01-configurable.gif" /></p>
 
@@ -39,7 +39,7 @@ namespace ScreenManagerShowcase
     </code>
 </pre>
 
-Para este ejemplo crearemos cuatro opciones diferentes, elegir formato, elegir lenguaje, activar modo super y aumentar el número de vidas. Para ello declararemos cuatro variables de tipo MenuEntry como atributos de la clase (si recuerdan antes estás las declarabamos dentro del mismo constructor) y las inicializaremos en el constructor con un String vacio.
+Para este ejemplo crearemos cuatro opciones diferentes, elegir formato, elegir lenguaje, activar modo súper y aumentar el número de vidas. Para ello declararemos cuatro variables de tipo MenuEntry como atributos de la clase (si recuerdan antes estás las declarábamos dentro del mismo constructor) y las inicializaremos en el constructor con un String vacío.
 
 <pre class="prettyprint">
     <code class="language-cs">
@@ -53,7 +53,7 @@ namespace ScreenManagerShowcase
     class MenuOpciones : BaseMenuScreen
     {
 
-    	MenuEntry formatoMenuEntry;
+        MenuEntry formatoMenuEntry;
         MenuEntry lenguajeMenuEntry;
         MenuEntry superMenuEntry;
         MenuEntry vidasMenuEntry;
@@ -61,7 +61,7 @@ namespace ScreenManagerShowcase
         public MenuOpciones(string menuTitle)
             : base(menuTitle)
         {
-        	formatoMenuEntry = new MenuEntry(this, string.Empty);
+            formatoMenuEntry = new MenuEntry(this, string.Empty);
             lenguajeMenuEntry = new MenuEntry(this, string.Empty);
             superMenuEntry = new MenuEntry(this, string.Empty);
             vidasMenuEntry = new MenuEntry(this, string.Empty);
@@ -106,7 +106,7 @@ static int lenguajeActual = 0;
     </code>
 </pre>
 
-Luego para la opción super y la vida podemos usar las siguientes variables.
+Luego para la opción súper y la vida podemos usar las siguientes variables.
 
 <pre class="prettyprint">
     <code class="language-cs">
@@ -115,9 +115,9 @@ static int vida = 23;
     </code>
 </pre>
 
-## 3.- Úniendo las variables con los MenuEntry
+## 3.- Uniendo las variables con los MenuEntry
 
-Para mostrar la información de estas variables en la pantalla crearemos un metodo privado que asigna el texto que mostrará cada MenuEntry.
+Para mostrar la información de estas variables en la pantalla crearemos un método privado que asigna el texto que mostrará cada MenuEntry.
 
 <pre class="prettyprint">
     <code class="language-cs">
@@ -131,7 +131,7 @@ private void SetMenuEntryText()
     </code>
 </pre>
 
-De esta forma cada Menuentry tendrá un un texto determinado por cada variable.
+De esta forma cada Menuentry tendrá un texto determinado por cada variable.
 
 <p class="ribbon-alert b-green" align="justify"><strong>Built-in:</strong> Los MenuEntry tienen la propiedad Text que permite cambiarles en cualquier momento el mensaje que estos muestran por pantalla. Esta funcionalidad viene previamente implementada en <strong>ScreenManager</strong></p>
 
@@ -144,7 +144,7 @@ Para la opción de Formato tendremos.
 <pre class="prettyprint">
     <code class="language-cs">
 void FormatoMenuEntrySelected(
-	object sender, PlayerIndexEventArgs e)
+    object sender, PlayerIndexEventArgs e)
 {
     formatoActual++;
 
@@ -156,14 +156,14 @@ void FormatoMenuEntrySelected(
     </code>
 </pre>
 
-Es decir, cada vez que se active este evento se avanzará al siguiente formato, y si se supera el último formato se volverá al principio. También pueden ver como al final es llamado el metodo privado que creamos **SetMenuEntryText()** el cuál permite actualizar el cambio de la variable en el menú.
+Es decir, cada vez que se active este evento se avanzará al siguiente formato, y si se supera el último formato se volverá al principio. También pueden ver como al final es llamado el método privado que creamos **SetMenuEntryText()** el cual permite actualizar el cambio de la variable en el menú.
 
 Para el lenguaje tendremos.
 
 <pre class="prettyprint">
     <code class="language-cs">
 void LenguajeMenuEntrySelected(
-	object sender, PlayerIndexEventArgs e)
+    object sender, PlayerIndexEventArgs e)
 {
     lenguajeActual = (lenguajeActual + 1) % lenguaje.Length;
 
@@ -174,12 +174,12 @@ void LenguajeMenuEntrySelected(
 
 La cuál trabaja bajo la misma lógica que con el Formato, solo que esta vez como es un array podemos usar la propiedad Length para calcular el modulo y no salirnos de memoria al recorrer los valores.
 
-Para super tendremos.
+Para súper tendremos.
 
 <pre class="prettyprint">
     <code class="language-cs">
 void SuperMenuEntrySelected(
-	object sender, PlayerIndexEventArgs e)
+    object sender, PlayerIndexEventArgs e)
 {
     super = !super;
 
@@ -195,7 +195,7 @@ Para vida tendremos.
 <pre class="prettyprint">
     <code class="language-cs">
 void VidaMenuEntrySelected(
-	object sender, PlayerIndexEventArgs e)
+    object sender, PlayerIndexEventArgs e)
 {
     ++vida;
 
@@ -206,7 +206,7 @@ void VidaMenuEntrySelected(
 
 Al ser una variable entera lo que haremos será sumar uno a su valor cada vez que se accione este evento.
 
-Cómo pueden ver cada evento llama al final al metodo **SetMenuEntryText()** para actualizar el valor del MenuEntry en la pantalla. De esta forma lo único que falta es agregar los eventos a los EventHandlers, lo cuál haremos en el Constructor de nuestra clase MenuOpciones. Además es necesario agregar el **SetMenuEntryText()** después de instanciar los MenuEntry para asignar los valores iniciales.
+Cómo pueden ver cada evento llama al final al método **SetMenuEntryText()** para actualizar el valor del MenuEntry en la pantalla. De esta forma lo único que falta es agregar los eventos a los EventHandlers, lo cual haremos en el Constructor de nuestra clase MenuOpciones. Además es necesario agregar el **SetMenuEntryText()** después de instanciar los MenuEntry para asignar los valores iniciales.
 
 <pre class="prettyprint">
     <code class="language-cs">
@@ -241,10 +241,10 @@ Al hacer build e iniciar el juego se obtendrá el siguiente resultado.
 
 <p class="ribbon-alert b-green" align="justify"><strong>Built-in:</strong> Al estar en cualquier menú es posible usar la tecla <kbd>ENTER</kbd> para activar el EventHandler Selected en el MenuEntry seleccionado. Esta funcionalidad viene previamente implementada en <strong>ScreenManager</strong></p>
 
-Como es posible ver en la imagen, el salir y volver al menú guarda los datos elegidos ya que estos son **static**, sin embargo se pueden usar otras formas para guardar estos valores, ya sean pasandolos a un **XML** u otro tipo de archivo, modificando una **Base de Datos**, pasandolos de parametros a otra función, etc. Todo este comportamiento puede ser fácilmente alterado en cada evento de cada variable.
+Como es posible ver en la imagen, el salir y volver al menú guarda los datos elegidos ya que estos son **static**, sin embargo se pueden usar otras formas para guardar estos valores, ya sean pasándolos a un **XML** u otro tipo de archivo, modificando una **Base de Datos**, pasándolos de parámetros a otra función, etc. Todo este comportamiento puede ser fácilmente alterado en cada evento de cada variable.
 
 <p class="ribbon-alert b-blue" align="justify"><strong>Descarga el Proyecto:</strong> Descarga el <strong><a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/archive/opc-cv1.0.zip">proyecto de Menú de Opciones Configurables</a></strong>para ver cómo todo este código es aplicado. Incluye el contenido del tutorial anterior.</p>
 
 # 6.- ¿Dónde continuar?
 
-Con esto ya puedes tener un menú con opcinoes configurables, pero ¿cómo cargar un escenario y que además haga uso de estás variables?, para saber cómo hacer esto y mucho más te invitamos a revisar nuestros [tutoriales en la página principal](http://www.spoonmangames.cl/MonoGame-ScreenManager/tutoriales/).
+Con esto ya puedes tener un menú con opciones configurables, pero ¿cómo cargar un escenario y que además haga uso de estas variables?, para saber cómo hacer esto y mucho más te invitamos a revisar nuestros [tutoriales en la página principal](http://www.spoonmangames.cl/MonoGame-ScreenManager/tutoriales/).

@@ -75,7 +75,7 @@ Lo primero a declarar es el constructor, el cuál debe usar el constructor base 
 
 <pre class="prettyprint">
     <code class="language-cs">
-	screenManager.AddScreen(
+    screenManager.AddScreen(
         new MenuPrincipal("Menú Principal"), null
     );
     </code>
@@ -88,22 +88,22 @@ Debido a que esta es nuestra primera pantalla en el juego el código debe ser ag
 <pre class="prettyprint">
     <code class="language-cs">
     public Game1()
-	{
-	    graphics = new GraphicsDeviceManager(this);
-	    Content.RootDirectory = "Content";
+    {
+        graphics = new GraphicsDeviceManager(this);
+        Content.RootDirectory = "Content";
 
-	    // Crea el ScreenManager
-	    screenManager = new ScreenManager.ScreenManager(this);
+        // Crea el ScreenManager
+        screenManager = new ScreenManager.ScreenManager(this);
 
-	    // Añade el ScreenManager a los componentes del juego
-	    Components.Add(screenManager);
+        // Añade el ScreenManager a los componentes del juego
+        Components.Add(screenManager);
 
-	    // Añade el Menu Principal al ScreenManager con el
+        // Añade el Menu Principal al ScreenManager con el
         // título "Menú Principal"
-	    screenManager.AddScreen(
+        screenManager.AddScreen(
             new MenuPrincipal("Menú Principal"), null
         );
-	}
+    }
     </code>
 </pre>
 
@@ -117,7 +117,7 @@ Vamos a agregar dos opciones, una para ir a un menú de selección de escenarios
 
 <pre class="prettyprint">
     <code class="language-cs">
-	MenuEntry escenarios = new MenuEntry(this, "Escenarios");
+    MenuEntry escenarios = new MenuEntry(this, "Escenarios");
     MenuEntry opciones = new MenuEntry(this, "Opciones");
     </code>
 </pre>
@@ -128,7 +128,7 @@ Para incluir finalmente estas opciones a la pantalla se debe agregar cada MenuEn
 
 <pre class="prettyprint">
     <code class="language-cs">
-	MenuEntries.Add(escenarios);
+    MenuEntries.Add(escenarios);
     MenuEntries.Add(opciones);
     </code>
 </pre>
@@ -203,24 +203,24 @@ El objetivo a continuación es crear dos menús más, de forma que al presionar 
 
 En la parte anterior creamos dos menús nuevos, pero estos no están vinculados con el Menú Principal de ninguna forma y al presionar las opciones que ya hemos implementado no ocurre nada. Todo esto se debe a que es necesario agregar **eventos** a cada botón. Agregar eventos en C# es bastante sencillo, como estos son parte del menú principal declararemos cada uno de ellos en la clase MenuPrincipal.cs.
 
-Lo primero a hacer al crear un evento es crear el método, crearemos uno para el menú de escenarios y otro para el menú de opciones, llamaremos MenuEscenarioSelected y MenuOpcionesSelected respectivamente, ambos deben ([por definición de eventos en MSDN C#](https://msdn.microsoft.com/en-us/library/ms366768.aspx)) tener dos argumentos como mínimo, el object que se subscribe al evento y un indice del evento.
+Lo primero a hacer al crear un evento es crear el método, crearemos uno para el menú de escenarios y otro para el menú de opciones, llamaremos MenuEscenarioSelected y MenuOpcionesSelected respectivamente, ambos deben ([por definición de eventos en MSDN C#](https://msdn.microsoft.com/en-us/library/ms366768.aspx)) tener dos argumentos como mínimo, el object que se subscribe al evento y un índice del evento.
 
 <pre class="prettyprint">
     <code class="language-cs">
-	private void MenuEscenarioSelected(
+    private void MenuEscenarioSelected(
         object sender, PlayerIndexEventArgs e)
-	{
-		ScreenManagerController.AddScreen(
+    {
+        ScreenManagerController.AddScreen(
             new MenuEscenario("Selecciona un Escenario"),
             e.PlayerIndex
         );
-	}
+    }
     </code>
 </pre>
 
-Para el **ScreenManager** existe un indice de evento llamado PlayerIndexEventArgs, el cuál nos permite identificar que player gatilló el evento, este es el segundo argumento de entrada pasado al método. El cuerpo de este evento nos permitirá agregar un nuevo menú al **ScreenManager**, para eso basta con usar el ScreenManagerController (el cual es una propiedad de GameScreen) y que nos permite acceder a la instancia de **ScreenManager** del juego.
+Para el **ScreenManager** existe un índice de evento llamado PlayerIndexEventArgs, el cuál nos permite identificar que player gatilló el evento, este es el segundo argumento de entrada pasado al método. El cuerpo de este evento nos permitirá agregar un nuevo menú al **ScreenManager**, para eso basta con usar el ScreenManagerController (el cual es una propiedad de GameScreen) y que nos permite acceder a la instancia de **ScreenManager** del juego.
 
-De esta forma si se lanza el evento se cargará el MenuEscenario con el título "Selecciona un Escenario" y el Menú Principal quedará en segundo plano. Sin embargo, necesitamos suscribir algún evento para que este método se gatille bajo alguna condición, la cuál debiera ser seleccionar la opción "Escenarios" del Menú Principal, para ello contamos con un EventHandler llamado Selected en la clase MenuEntry, el cual se gatilla al presionar <kbd>Enter</kbd> sobre una opción. Basado en esto debemos agregar la siguiente línea de código en el constructor del MenuPrincipal.cs, después de instanciar el MenuEntry y antes de agregarlo a la lista de MenuEntries.
+De esta forma si se lanza el evento se cargará el MenuEscenario con el título "Selecciona un Escenario" y el Menú Principal quedará en segundo plano. Sin embargo, necesitamos suscribir algún evento para que este método se gatille bajo alguna condición, la cual debiera ser seleccionar la opción "Escenarios" del Menú Principal, para ello contamos con un EventHandler llamado Selected en la clase MenuEntry, el cual se gatilla al presionar <kbd>Enter</kbd> sobre una opción. Basado en esto debemos agregar la siguiente línea de código en el constructor del MenuPrincipal.cs, después de instanciar el MenuEntry y antes de agregarlo a la lista de MenuEntries.
 
 <pre class="prettyprint">
     <code class="language-cs">
@@ -236,7 +236,7 @@ Tal que el constructor quedará del a siguiente forma.
 
 <pre class="prettyprint">
     <code class="language-cs">
-	public MenuPrincipal(string menuTitle)
+    public MenuPrincipal(string menuTitle)
         : base(menuTitle)
     {
         MenuEntry escenarios = new MenuEntry(this, "Escenarios");
@@ -307,7 +307,7 @@ Al hacer build e iniciar el juego se obtendrá el siguiente resultado.
 
 <p class="ribbon-alert b-green" align="justify"><strong>Built-in:</strong> Al estar en cualquier menú es posible usar la tecla <kbd>ESC</kbd> para volver al menú anterior. Esta funcionalidad viene previamente implementada en <strong>ScreenManager</strong></p>
 
-<p class="ribbon-alert b-blue" align="justify"><strong>Descarga el Proyecto:</strong> Descarga el <strong><a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/archive/mpv1.0.zip">proyecto de Menu y Pantallas</a></strong>para ver cómo todo este código es aplicado.</p>
+<p class="ribbon-alert b-blue" align="justify"><strong>Descarga el Proyecto:</strong> Descarga el <strong><a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/archive/mpv1.0.zip">proyecto de Menú y Pantallas</a></strong>para ver cómo todo este código es aplicado.</p>
 
 # 6.- ¿Dónde continuar?
 

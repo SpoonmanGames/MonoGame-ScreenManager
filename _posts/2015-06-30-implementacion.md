@@ -32,7 +32,7 @@ De forma que el proyecto agregado se verá de la siguiente forma en Visual Studi
 
 <p align="center"><img src="{{ site.baseurl }}/images/04-implementacion.png" /></p>
 
-Se tiene que agregar la referencia a **ScreenManager** a el proyecto Windows 8.1 y Windows Phone 8.1 (el siguiente gif solo muestra para Windows 8.1, lo mismo se debe hacer para Windows Phone 8.1)
+Se tiene que agregar la referencia a **ScreenManager** al proyecto Windows 8.1 y Windows Phone 8.1 (el siguiente gif solo muestra para Windows 8.1, lo mismo se debe hacer para Windows Phone 8.1)
 
 <p align="center"><img src="{{ site.baseurl }}/images/05-implementacion.gif" /></p>
 
@@ -72,7 +72,7 @@ El constructor de Game1 debe tener al menos los siguientes elementos.
     </code>
 </pre>
 
-Esto provocará que en cada frame del video juego los metodos Update() y Draw() de **ScreenManager** serán llamados.
+Esto provocará que en cada frame del video juego los métodos Update() y Draw() de **ScreenManager** serán llamados.
 
 ## 3.- Agregar Assets necesarios
 
@@ -98,5 +98,5 @@ Ya puedes compilar e iniciar el juego sin ningún problema, al hacerlo notaras q
 
 ## 5.- ¿Dónde continuar?
 
-Desde aquí puedes implementar de muchas maneras diferentes a **ScreenManager** te invitamos a revisar [nuestros tutoriales]({{ site.baseurl }}/tutoriales/) para darte una idea de donde empezar y como usar esta herramienta.
+Desde aquí puedes implementar de muchas maneras diferentes a **ScreenManager** te invitamos a revisar [nuestros tutoriales]({{ site.baseurl }}/tutoriales/) para darte una idea de dónde empezar y como usar esta herramienta.
 
