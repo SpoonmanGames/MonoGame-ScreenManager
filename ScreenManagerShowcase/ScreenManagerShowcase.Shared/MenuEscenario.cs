@@ -1,7 +1,5 @@
 ﻿using ScreenManager.MenuScreen;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using ScreenManager.PantallasBases;
 
 namespace ScreenManagerShowcase
 {
@@ -10,7 +8,16 @@ namespace ScreenManagerShowcase
         public MenuEscenario(string menuTitle)
             : base(menuTitle)
         {
+            MenuEntry escenario_uno = new MenuEntry(this, "Escenario 1");
 
+            escenario_uno.Selected += MenuEscenarioUnoSelected;
+
+            MenuEntries.Add(escenario_uno);
+        }
+
+        private void MenuEscenarioUnoSelected(object sender, PlayerIndexEventArgs e)
+        {
+            LoadingScreen.Load(ScreenManagerController, true, string.Empty, null, new Escenario());
         }
     }
 }
