@@ -121,9 +121,9 @@ namespace ScreenManagerShowcase
         {
             if (content == null)
                 content = new ContentManager(
-                                ScreenManagerController.Game.Services,
-                                "Content"
-                              );
+                            ScreenManagerController.Game.Services,
+                            "Content"
+                          );
 
             gameFont = ScreenManagerController.Font;
 
