@@ -151,10 +151,11 @@ namespace ScreenManagerShowcase
                 (float)(random.NextDouble() - 0.5) * randomization;
   
               Vector2 targetPosition = new Vector2(
-                ScreenManagerController.GraphicsDevice.Viewport.Width / 2 
-                - gameFont.MeasureString("Agrega tu Escenario de juego aquí.").X / 2,
-                200
-                );
+              ScreenManagerController.GraphicsDevice.Viewport.Width
+              / 2 - gameFont.MeasureString(
+                       "Agrega tu Escenario de juego aquí.").X / 2,
+              200
+              );
   
               enemyPosition = Vector2.Lerp(
                                 enemyPosition, 
