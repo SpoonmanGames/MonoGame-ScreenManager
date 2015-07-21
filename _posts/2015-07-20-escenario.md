@@ -315,7 +315,6 @@ Al hacer build e iniciar el juego se obtendrá el siguiente resultado.
 
 De esta misma forma es posible cargar más escenarios desde el MenuEscenarios.cs o desde el mismo Escenario.cs, tan solo se debe usar sabiamente el AddScreen o el LoadinScreen según sea necesario. Por ejemplo: *un nuevo escenario usaría LoadingScreen, cargar el interior de una casa en un escenario podría funcionar mejor con un AddScreen, etc*. Siempre ten en cuenta tus necesidades antes de usar una de estas dos opciones.
 
-//TODO: proyecto
 <p class="ribbon-alert b-blue" align="justify"><strong>Descarga el Proyecto:</strong> Descarga el <strong><a href="https://github.com/SpoonmanGames/MonoGame-ScreenManager/archive/escv1.0.zip">proyecto de Añadir un Escenario</a></strong>para ver cómo todo este código es aplicado. Incluye el contenido del tutorial anterior.</p>
 
 # 6.- ¿Dónde continuar?
