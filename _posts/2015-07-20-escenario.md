@@ -60,16 +60,24 @@ namespace ScreenManagerShowcase
         public MenuEscenario(string menuTitle)
             : base(menuTitle)
         {
-            MenuEntry escenario_uno = new MenuEntry(this, "Escenario 1");
+            MenuEntry escenario_uno = 
+                new MenuEntry(this, "Escenario 1");
 
             escenario_uno.Selected += MenuEscenarioUnoSelected;
 
             MenuEntries.Add(escenario_uno);
         }
 
-        private void MenuEscenarioUnoSelected(object sender, PlayerIndexEventArgs e)
+        private void MenuEscenarioUnoSelected(
+            object sender, PlayerIndexEventArgs e)
         {
-            LoadingScreen.Load(ScreenManagerController, true, string.Empty, null, new Escenario());
+            LoadingScreen.Load(
+                ScreenManagerController, 
+                true, 
+                string.Empty, 
+                null, 
+                new Escenario()
+            );
         }
     }
 }
@@ -77,6 +85,8 @@ namespace ScreenManagerShowcase
 </pre>
 
 Cómo es posible ver esta clase se parece mucho al menú principal, solo que en vez de usar **ScreenManagerController.AddScreen** usamos **LoadingScreen..Load**, la cual nos permite cargar una nueva GameScreen desechando en el proceso todas las GameScreen previamente cargadas, de esta forma solo nuestro Escenario estará activo y en memoria. Esto se hace ya que mientras estamos en un escenario no es necesario guardar la información del menú, el cual solo sirve para navegar a través de él.
+
+**LoadingScreen** recive como primer parametro el ScreenManager, luego una variable para indicar si la carga del escenario será rápida o lenta, un string para indicar un fondo de pantalla mientras se carga, una variable para indicar si algún jugador tendrá uso exclusivo del escenario y finalmente una lista de GameScreen separadas por comas para ser cargadas.
 
 ## 2.- Agregar un comportamiento al Escenario
 
@@ -110,7 +120,10 @@ namespace ScreenManagerShowcase
         public override void LoadContent()
         {
             if (content == null)
-                content = new ContentManager(ScreenManagerController.Game.Services, "Content");
+                content = new ContentManager(
+                                ScreenManagerController.Game.Services,
+                                "Content"
+                              );
 
             gameFont = ScreenManagerController.Font;
 
@@ -122,34 +135,48 @@ namespace ScreenManagerShowcase
         }
 
 
-        public override void Update(GameTime gameTime, bool otherScreenHasFocus,
-                                                        bool coveredByOtherScreen)
+        public override void Update(
+            GameTime gameTime,bool otherScreenHasFocus,
+                             bool coveredByOtherScreen)
         {
             base.Update(gameTime, otherScreenHasFocus, false);
 
             if (IsActive)
             {
-                const float randomization = 10;
-
-                enemyPosition.X += (float)(random.NextDouble() - 0.5) * randomization;
-                enemyPosition.Y += (float)(random.NextDouble() - 0.5) * randomization;
-
-                Vector2 targetPosition = new Vector2(
-                    ScreenManagerController.GraphicsDevice.Viewport.Width / 2 - gameFont.MeasureString("Agrega tu Escenario de juego aquí.").X / 2,
-                    200);
-
-                enemyPosition = Vector2.Lerp(enemyPosition, targetPosition, 0.05f);
+              const float randomization = 10;
+              
+              enemyPosition.X += 
+                (float)(random.NextDouble() - 0.5) * randomization;
+              enemyPosition.Y += 
+                (float)(random.NextDouble() - 0.5) * randomization;
+  
+              Vector2 targetPosition = new Vector2(
+                ScreenManagerController.GraphicsDevice.Viewport.Width / 2 
+                - gameFont.MeasureString("Agrega tu Escenario de juego aquí.").X / 2,
+                200
+                );
+  
+              enemyPosition = Vector2.Lerp(
+                                enemyPosition, 
+                                targetPosition, 
+                                0.05f
+                              );
             }
         }
 
         public override void Draw(GameTime gameTime)
         {
-            SpriteBatch spriteBatch = ScreenManagerController.SpriteBatch;
+            SpriteBatch spriteBatch = 
+                ScreenManagerController.SpriteBatch;
 
             spriteBatch.Begin();
 
-            spriteBatch.DrawString(gameFont, "Agrega tu Escenario de juego aquí.",
-                                   enemyPosition, Color.Black);
+            spriteBatch.DrawString(
+                gameFont,
+                "Agrega tu Escenario de juego aquí.",
+                enemyPosition,
+                Color.Black
+            );
 
             spriteBatch.End();
         }
