@@ -153,7 +153,9 @@ namespace ScreenManagerShowcase
               Vector2 targetPosition = new Vector2(
               ScreenManagerController.GraphicsDevice.Viewport.Width
               / 2 - gameFont.MeasureString(
-                       "Agrega tu Escenario de juego aquí.").X / 2,
+                       "Agrega tu Escenario de juego aquí."
+                    ).X
+              / 2,
               200
               );
   
@@ -256,9 +258,13 @@ public override void HandleInput(InputState input)
     {
         const string message = "¿Está seguro que desea salir?";
 
-        PopupScreen confirmExitMessageBox = new PopupScreen(message);
+        PopupScreen confirmExitMessageBox =
+            new PopupScreen(message);
 
-        ScreenManagerController.AddScreen(confirmExitMessageBox, py);
+        ScreenManagerController.AddScreen(
+            confirmExitMessageBox,
+            py
+        );
     }
 }
     </code>
@@ -266,7 +272,7 @@ public override void HandleInput(InputState input)
 
 Si ejecutamos este código obtendremos lo siguiente:
 
-//TODO gif del popup
+<p align="center"><img src="{{ site.baseurl }}/images/03-escenario.gif" /></p>
 
 Es posible notar que al abrir el popup la Screen que queda atrás queda en modo pausa, sin embargo si aceptamos con Escape la acción no se ejecuta. Esto es debido a que nos falta vincular un evento al Popup.
 
@@ -278,7 +284,13 @@ Esto es similar a agregar un evento para un Menú, primero definimos un metodo y
     <code class="language-cs">
 void ConfirmExitMessageBoxAccepted(object sender, PlayerIndexEventArgs e)
 {
-    LoadingScreen.Load(ScreenManagerController, true, string.Empty, null, new MenuPrincipal("Menú Principal"));
+    LoadingScreen.Load(
+        ScreenManagerController, 
+        true,
+        string.Empty,
+        null,
+        new MenuPrincipal("Menú Principal")
+    );
 }
     </code>
 </pre>
