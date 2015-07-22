@@ -90,10 +90,12 @@ private bool IsNewKeyPress(
     else
     {
         //Acepta el input de cualquier player
-        return (IsNewKeyPress(key, PlayerIndex.One, out playerIndex) ||
-                IsNewKeyPress(key, PlayerIndex.Two, out playerIndex) ||
-                IsNewKeyPress(key, PlayerIndex.Three, out playerIndex) ||
-                IsNewKeyPress(key, PlayerIndex.Four, out playerIndex));
+        return (
+          IsNewKeyPress(key, PlayerIndex.One, out playerIndex) ||
+          IsNewKeyPress(key, PlayerIndex.Two, out playerIndex) ||
+          IsNewKeyPress(key, PlayerIndex.Three, out playerIndex) ||
+          IsNewKeyPress(key, PlayerIndex.Four, out playerIndex)
+        );
     }
 }
     </code>
@@ -122,10 +124,12 @@ private bool IsContinuousKeyPress(
     else
     {
         //Acepta el input de cualquier player
-        return (IsContinuousKeyPress(key, PlayerIndex.One, out playerIndex) ||
-                IsContinuousKeyPress(key, PlayerIndex.Two, out playerIndex) ||
-                IsContinuousKeyPress(key, PlayerIndex.Three, out playerIndex) ||
-                IsContinuousKeyPress(key, PlayerIndex.Four, out playerIndex));
+        return (
+          IsContinuousKeyPress(key, PlayerIndex.One, out playerIndex) ||
+          IsContinuousKeyPress(key, PlayerIndex.Two, out playerIndex) ||
+          IsContinuousKeyPress(key, PlayerIndex.Three, out playerIndex) ||
+          IsContinuousKeyPress(key, PlayerIndex.Four, out playerIndex)
+        );
     }
 }
     </code>
@@ -146,7 +150,9 @@ Hay dos formas de declarar una acción sobre una Key:
 public bool IsMenuCancel(PlayerIndex? controllingPlayer,
                          out PlayerIndex playerIndex)
 {
-    return IsNewKeyPress(Keys.Escape, controllingPlayer, out playerIndex);
+    return IsNewKeyPress(
+        Keys.Escape, controllingPlayer, out playerIndex
+    );
 }
     </code>
 </pre>
@@ -159,7 +165,9 @@ public bool IsG(PlayerIndex? controllingPlayer)
 {
     PlayerIndex playerIndex;
 
-    return IsContinuousKeyPress(Keys.G , controllingPlayer, out playerIndex);
+    return IsContinuousKeyPress(
+        Keys.G , controllingPlayer, out playerIndex
+    );
 }
     </code>
 </pre>
@@ -174,10 +182,11 @@ public override void HandleInput(InputState input)
 {
     PlayerIndex playerIndex;
 
-    /* Pasamos el ControllingPlayer como nulo si queremos que cualquier player
-     * realice acciones, o con un valor para el player que deseamos que 
-     * realice la acción.
-     * Luego playerIndex guardará la información de quien hizo la acción.
+    /* Pasamos el ControllingPlayer como nulo si queremos que
+     * cualquier player realice acciones, o con un valor para 
+     * el player que deseamos que realice la acción.
+     * Luego playerIndex guardará la información de quien
+     * hizo la acción.
      */
     if (input.IsMenuSelect(ControllingPlayer, out playerIndex))
     {
@@ -205,4 +214,4 @@ Como es posible ver el InputState es recibido como parámetro, por lo que no es 
 
 Esto termina la explicación de HandleInput e InputState, si tienes más dudas escríbenos en los comentarios más abajo!
 
-<p class="ribbon-alert b-red" align="justify"><strong>Importante:</strong> No se deben modificar los métodos definidos por defecto en el **InputState.cs** a no ser que se sepa muy bien que es lo que se hace, ya que en diferentes partes del proyecto **ScreenManager** se hacen llamados a los diferentes métodos de esta clase.</p>
+<p class="ribbon-alert b-red" align="justify"><strong>Importante:</strong> No se deben modificar los métodos definidos por defecto en el <strong>InputState.cs</strong> a no ser que se sepa muy bien que es lo que se hace, ya que en diferentes partes del proyecto <strong>ScreenManager</strong> se hacen llamados a los diferentes métodos de esta clase.</p>
