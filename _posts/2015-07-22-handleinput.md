@@ -89,13 +89,21 @@ private bool IsNewKeyPress(
     }
     else
     {
-        //Acepta el input de cualquier player
-        return (
-          IsNewKeyPress(key, PlayerIndex.One, out playerIndex) ||
-          IsNewKeyPress(key, PlayerIndex.Two, out playerIndex) ||
-          IsNewKeyPress(key, PlayerIndex.Three, out playerIndex) ||
-          IsNewKeyPress(key, PlayerIndex.Four, out playerIndex)
-        );
+      //Acepta el input de cualquier player
+      return (
+        IsNewKeyPress(
+          key, PlayerIndex.One, out playerIndex
+        ) ||
+        IsNewKeyPress(
+          key, PlayerIndex.Two, out playerIndex
+        ) ||
+        IsNewKeyPress(
+          key, PlayerIndex.Three, out playerIndex
+        ) ||
+        IsNewKeyPress(
+          key, PlayerIndex.Four, out playerIndex
+        )
+      );
     }
 }
     </code>
@@ -125,10 +133,18 @@ private bool IsContinuousKeyPress(
     {
       //Acepta el input de cualquier player
       return (
-        IsContinuousKeyPress(key, PlayerIndex.One, out playerIndex) ||
-        IsContinuousKeyPress(key, PlayerIndex.Two, out playerIndex) ||
-        IsContinuousKeyPress(key, PlayerIndex.Three, out playerIndex) ||
-        IsContinuousKeyPress(key, PlayerIndex.Four, out playerIndex)
+        IsContinuousKeyPress(
+          key, PlayerIndex.One, out playerIndex
+        ) ||
+        IsContinuousKeyPress(
+          key, PlayerIndex.Two, out playerIndex
+        ) ||
+        IsContinuousKeyPress(
+          key, PlayerIndex.Three, out playerIndex
+        ) ||
+        IsContinuousKeyPress(
+          key, PlayerIndex.Four, out playerIndex
+        )
       );
     }
 }
