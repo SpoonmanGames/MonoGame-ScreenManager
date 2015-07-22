@@ -123,13 +123,13 @@ private bool IsContinuousKeyPress(
     }
     else
     {
-        //Acepta el input de cualquier player
-        return (
-          IsContinuousKeyPress(key, PlayerIndex.One, out playerIndex) ||
-          IsContinuousKeyPress(key, PlayerIndex.Two, out playerIndex) ||
-          IsContinuousKeyPress(key, PlayerIndex.Three, out playerIndex) ||
-          IsContinuousKeyPress(key, PlayerIndex.Four, out playerIndex)
-        );
+      //Acepta el input de cualquier player
+      return (
+        IsContinuousKeyPress(key, PlayerIndex.One, out playerIndex) ||
+        IsContinuousKeyPress(key, PlayerIndex.Two, out playerIndex) ||
+        IsContinuousKeyPress(key, PlayerIndex.Three, out playerIndex) ||
+        IsContinuousKeyPress(key, PlayerIndex.Four, out playerIndex)
+      );
     }
 }
     </code>
