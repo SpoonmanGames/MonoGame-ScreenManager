@@ -1,6 +1,5 @@
 ---
 layout: default
-index: true
 ---
 
 # ScreenManager v1.0.1
