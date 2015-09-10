@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Monogame ScreenManager
 ---
 
 # ScreenManager v1.0.1
