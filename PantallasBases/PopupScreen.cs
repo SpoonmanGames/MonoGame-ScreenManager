@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Helpers.InputController;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using ScreenManager.MenuScren;

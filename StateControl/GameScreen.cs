@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using DebugManager.Outputs;
+using Helpers.InputController;
+using Microsoft.Xna.Framework;
 using System;
 
 namespace ScreenManager.StateControl
@@ -50,7 +52,6 @@ namespace ScreenManager.StateControl
             protected set { isAPopup = value; }
         }
         private bool isAPopup = false;
-
 
         /// <summary>
         /// Una pantalla puede TransitionOff por dos razones:
@@ -221,7 +222,7 @@ namespace ScreenManager.StateControl
         /// <param name="otherScreenHasFocus">boleano para determinar si esta pantalla tiene el foco o no</param>
         /// <param name="coveredByOtherScreen">boleano para determinar si está siendo tapada por otra Screen</param>
         public virtual void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
-        {
+        {            
             //Actualiza si la Screen tiene el foco en ese momento o no
             this.otherScreenHasFocus = otherScreenHasFocus;
 

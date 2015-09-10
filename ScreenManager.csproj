@@ -47,13 +47,22 @@
     <Compile Include="PantallasBases\PopupScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StateControl\GameScreen.cs" />
-    <Compile Include="StateControl\InputState.cs" />
     <Compile Include="ScreenManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">
       <HintPath>C:\Program Files (x86)\MonoGame\v3.0\Assemblies\WindowsPhone81\MonoGame.Framework.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DebugManager\DebugManager.csproj">
+      <Project>{728d7e10-ddff-4d90-b828-bc3fd2935a6a}</Project>
+      <Name>DebugManager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers\Helpers.csproj">
+      <Project>{d5db5887-1d18-4086-b7fe-ec53e338e008}</Project>
+      <Name>Helpers</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

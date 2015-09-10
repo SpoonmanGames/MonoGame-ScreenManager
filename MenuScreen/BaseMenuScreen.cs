@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Helpers.InputController;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ScreenManager.StateControl;
 using System;
@@ -40,7 +41,7 @@ namespace ScreenManager.MenuScren
         private int yOffSetPosition;
 
         /// <summary>
-        /// Valor que de fine la posición inicial Y para ek titulo.
+        /// Valor que de fine la posición inicial Y para el titulo.
         /// </summary>
         public int YTitlePosition { get { return this.yTitlePosition; } set { this.yTitlePosition = value; } }
         private int yTitlePosition;

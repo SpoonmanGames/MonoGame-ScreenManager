@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Helpers.InputController;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -52,15 +53,9 @@ namespace ScreenManager
         public AudioEngine AudioEngine { get; private set; }
 
         /// <summary>
-        /// Sistema de Debug: Si es true imprimirá por consola la lista de 
-        /// pantallas que tiene guardad en un momento dado.
-        /// </summary>
-        public bool TraceEnabled { get; private set; }
-
-        /// <summary>
         /// Permite saber si ScreenManager se ha inicializado y cargado sus componentes graficos.
         /// </summary>
-        private bool IsInitialized { get; set; }
+        private bool IsInitialized { get; private set; }
 
         /// <summary>
         /// Textura vacia que sirve para dibujar en ella una capa negra de transparencia
