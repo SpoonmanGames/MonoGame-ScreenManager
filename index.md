@@ -6,8 +6,7 @@ index: true
 # ScreenManager v1.0.1
 
 <p align="justify">
-Este proyecto ha sido desarrollado por <a href="http://www.spoonmangames.cl"><strong>Spoonman Games</strong></a> y es
-una de las tantas herramientas para Monogames creada para la construcción de vídeo juegos. Para conocer que otras herramientas tenemos has click <a href="http://www.spoonmangames.cl/download/"><strong>Aquí</strong></a>.
+Este proyecto ha sido desarrollado por <a href="http://www.spoonmangames.cl"><strong>Spoonman Games</strong></a>. Para conocer que otras herramientas tenemos has click <a href="http://www.spoonmangames.cl/download/"><strong>Aquí</strong></a>.
 <br><br>
 <strong>ScreenManager</strong> permite manejar varias instancias de menú y de escenarios de forma independiente, es un Game State Manager orientado a las Screens. Esta herramienta es re-utilizable en cualquier proyecto y muy fácil de configurar, se define una vez al comienzo del proyecto y luego puede ser usado desde cualquier instancia del mismo.
 </p>
