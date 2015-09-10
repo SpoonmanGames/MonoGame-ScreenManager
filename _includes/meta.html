@@ -12,10 +12,6 @@
     {% endif %}
     <meta name="author" content="{{ site.owner }}" />
 
-    {% if page.title %}
-    <meta property="og:title" content="{{ page.title }}" />
-    {% endif %}
-
     {% if page.tags %}
       <meta name="keywords" content="{{ page.tags | join: ', ' }}">
     {% endif %}
